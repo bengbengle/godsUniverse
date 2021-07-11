@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "https://bengbengle.github.io/godsUniverse/static/css/main.6aed91c1.chunk.css",
-    "main.js": "https://bengbengle.github.io/godsUniverse/static/js/main.41d693c7.chunk.js",
-    "main.js.map": "https://bengbengle.github.io/godsUniverse/static/js/main.41d693c7.chunk.js.map",
-    "runtime-main.js": "https://bengbengle.github.io/godsUniverse/static/js/runtime-main.9106609c.js",
-    "runtime-main.js.map": "https://bengbengle.github.io/godsUniverse/static/js/runtime-main.9106609c.js.map",
-    "static/css/2.fd3401af.chunk.css": "https://bengbengle.github.io/godsUniverse/static/css/2.fd3401af.chunk.css",
-    "static/js/2.bc4479c4.chunk.js": "https://bengbengle.github.io/godsUniverse/static/js/2.bc4479c4.chunk.js",
-    "static/js/2.bc4479c4.chunk.js.map": "https://bengbengle.github.io/godsUniverse/static/js/2.bc4479c4.chunk.js.map",
-    "index.html": "https://bengbengle.github.io/godsUniverse/index.html",
-    "static/css/2.fd3401af.chunk.css.map": "https://bengbengle.github.io/godsUniverse/static/css/2.fd3401af.chunk.css.map",
-    "static/css/main.6aed91c1.chunk.css.map": "https://bengbengle.github.io/godsUniverse/static/css/main.6aed91c1.chunk.css.map",
-    "static/js/2.bc4479c4.chunk.js.LICENSE.txt": "https://bengbengle.github.io/godsUniverse/static/js/2.bc4479c4.chunk.js.LICENSE.txt"
+    "main.css": "/static/css/main.6aed91c1.chunk.css",
+    "main.js": "/static/js/main.41d693c7.chunk.js",
+    "main.js.map": "/static/js/main.41d693c7.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9106609c.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9106609c.js.map",
+    "static/css/2.fd3401af.chunk.css": "/static/css/2.fd3401af.chunk.css",
+    "static/js/2.bc4479c4.chunk.js": "/static/js/2.bc4479c4.chunk.js",
+    "static/js/2.bc4479c4.chunk.js.map": "/static/js/2.bc4479c4.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.fd3401af.chunk.css.map": "/static/css/2.fd3401af.chunk.css.map",
+    "static/css/main.6aed91c1.chunk.css.map": "/static/css/main.6aed91c1.chunk.css.map",
+    "static/js/2.bc4479c4.chunk.js.LICENSE.txt": "/static/js/2.bc4479c4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9106609c.js",
