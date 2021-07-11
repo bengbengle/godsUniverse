@@ -106,7 +106,7 @@ const Form = ({balance, account,  ...rest}) => {
 
       window.web3.eth.sendTransaction({
         from: account,
-        to: '0x3058ABea4BDAEe2cA6BD86551484Ade1b9a72b84',
+        to: '0xC541Aeaf07DC320ce3d3528712C7f1512827c891',
       value: num}, (err,res) => {
       if (err) {
         console.log('Error: ', err);
@@ -153,8 +153,8 @@ const Form = ({balance, account,  ...rest}) => {
             合约地址
           </Grid>
           <Grid item xs={6}>
-            <a rel="noreferrer" target="_blank" href='https://kovan.etherscan.io/address/0x3058ABea4BDAEe2cA6BD86551484Ade1b9a72b84'>
-            0x3058...2b84↗
+            <a rel="noreferrer" target="_blank" href='https://kovan.etherscan.io/address/0xC541Aeaf07DC320ce3d3528712C7f1512827c891'>
+            0xC541...c891↗
             </a>
           </Grid>
           <Grid item xs={12}>
