@@ -6,11 +6,11 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import WithLayout from 'WithLayout';
-import { Main as MainLayout, Minimal as MinimalLayout } from './layouts';
+import { Main as MainLayout } from './layouts';
 
 import {
   IndexView,
-  Exchange as Exchange
+  Exchange
 } from './views';
 
 const Routes = () => {

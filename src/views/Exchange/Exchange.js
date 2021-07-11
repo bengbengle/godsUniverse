@@ -4,7 +4,6 @@ import { Form } from './components';
 import { Image } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 import { HeroShaped } from 'components/organisms';
-import Web3 from 'web3';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -36,7 +35,6 @@ const useStyles = makeStyles(theme => ({
 const SignupCover = ({balance, account, ...rest}) => {
   const classes = useStyles();
 
-  // const props = this.props
   console.log('balance', balance)
 
   return (

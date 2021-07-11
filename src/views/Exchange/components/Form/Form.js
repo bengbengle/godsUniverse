@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Grid, Button, TextField } from '@material-ui/core';
 import validate from 'validate.js';
-import { LearnMoreLink } from 'components/atoms';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -154,7 +153,7 @@ const Form = ({balance, account,  ...rest}) => {
             合约地址
           </Grid>
           <Grid item xs={6}>
-            <a target="_blank" href='https://kovan.etherscan.io/address/0x3058ABea4BDAEe2cA6BD86551484Ade1b9a72b84'>
+            <a rel="noreferrer" target="_blank" href='https://kovan.etherscan.io/address/0x3058ABea4BDAEe2cA6BD86551484Ade1b9a72b84'>
             0x3058...2b84↗
             </a>
           </Grid>

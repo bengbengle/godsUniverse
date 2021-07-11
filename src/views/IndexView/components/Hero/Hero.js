@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { SectionHeader, TypedText } from 'components/molecules';
 import { HeroShaped } from 'components/organisms';
 
@@ -100,23 +100,7 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
 
   const subtitle = 'TheFront will make your product look modern and professional while saving you precious time.';
 
-  const docsButton = (
-    <Button size="large" variant="outlined" color="primary" component="a" href="/documentation">
-      Documentation
-    </Button>
-  );
 
-  const buyButton = (
-    <Button
-      size="large"
-      variant="contained"
-      color="primary"
-      component="a"
-      href="/home"
-    >
-      Get started
-    </Button>
-  );
 
   const leftSideContent = (
     <SectionHeader
@@ -127,9 +111,6 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
         variant: 'h2',
         color: 'textPrimary',
       }}
-      // ctaGroup={[
-      //   docsButton, buyButton
-      // ]}
       data-aos="fade-right"
       disableGutter
       className={classes.leftSideContent}

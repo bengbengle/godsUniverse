@@ -2,8 +2,6 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles, colors } from '@material-ui/core';
-// import { colors, Typography } from '@material-ui/core';
-import { Icon } from 'components/atoms';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -28,8 +26,7 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     top: `-${theme.spacing(1 / 2)}px`,
     left: `-${theme.spacing(1 / 2)}px`,
-    width: theme.spacing(3),
-    height: theme.spacing(3),
+    // height: theme.spacing(3),
     borderRadius: '50%',
     backgroundColor: theme.palette.text.primary,
     transition: `transform .3s cubic-bezier(.4,.03,0,1)`,

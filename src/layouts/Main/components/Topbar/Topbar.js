@@ -7,14 +7,9 @@ import {
   Hidden,
   List,
   ListItem,
-  ListItemIcon,
-  Popover,
   Typography,
-  IconButton,
   Button,
 } from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MenuIcon from '@material-ui/icons/Menu';
 import { Image, DarkModeToggler } from 'components/atoms';
 
 
@@ -152,7 +147,7 @@ const Topbar = ({
   ...rest }) => {
   const classes = useStyles();
 
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [setAnchorEl] = useState(null);
   const [openedPopoverId, setOpenedPopoverId] = useState(null);
 
   const handleClick = (event, popoverId) => {
@@ -161,10 +156,6 @@ const Topbar = ({
 
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-    setOpenedPopoverId(null);
-  };
 
   const callConnect = async () => {
     console.log('call connect ....')
@@ -221,7 +212,7 @@ const Topbar = ({
       <Hidden smDown>
         <List disablePadding className={classes.navigationContainer}>
 
-          {[whitepaper, exchange, nft].map((page, i) => (
+          {[whitepaper, exchange, nft].map((page) => (
             <div key={page.id}>
               <ListItem
                 aria-describedby={page.id}

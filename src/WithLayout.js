@@ -27,9 +27,6 @@ export const useDarkMode = () => {
     themeMode === 'light' ? setMode('light') : setMode('light');
   };
   
-  const langToggler = () => {
-    langMode === 'en' ? setMode('zh') : setMode('en');
-  };
 
   useEffect(() => {
     const localTheme = window.localStorage.getItem('themeMode');
