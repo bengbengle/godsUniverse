@@ -12,6 +12,8 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import PinterestIcon from '@material-ui/icons/Pinterest';
+import EmailIcon from '@material-ui/icons/Email';
+import TelegramIcon from '@material-ui/icons/Telegram';
 
 import { Image } from 'components/atoms';
 
@@ -134,17 +136,17 @@ const Footer = props => {
                 </div>
               </ListItem>
               <ListItem disableGutters>
-                <IconButton className={classes.socialIcon}>
+                {/* <IconButton className={classes.socialIcon}>
                   <FacebookIcon className={classes.icon} />
+                </IconButton> */}
+                <IconButton className={classes.socialIcon} href='mailto:godsuniversecommunity@gmail.com'>
+                  <EmailIcon className={classes.icon} />
                 </IconButton>
-                <IconButton className={classes.socialIcon}>
-                  <InstagramIcon className={classes.icon} />
-                </IconButton>
-                <IconButton className={classes.socialIcon}>
+                <IconButton className={classes.socialIcon} href='https://twitter.com/GodsUniverse2'>
                   <TwitterIcon className={classes.icon} />
                 </IconButton>
-                <IconButton className={classes.socialIcon}>
-                  <PinterestIcon className={classes.icon} />
+                <IconButton className={classes.socialIcon} href='https://t.me/GodsUniverse' >
+                  <TelegramIcon className={classes.icon} />
                 </IconButton>
               </ListItem>
             </List>
