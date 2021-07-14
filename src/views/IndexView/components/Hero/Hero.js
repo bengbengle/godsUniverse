@@ -74,8 +74,8 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
 
   const title = (
     <Typography variant="h2" component="span" className={classes.fontWeight900}>
-     God's universe  
-     {/* An introduction to the background of God's universe */}
+     Gods Universe  
+     {/* An introduction to the background of Gods Universe */}
       <br />
       <TypedText
         component="span"
@@ -88,7 +88,7 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
             'introduction ',
             'to the  ',
             'background of ',
-            "God's universe ",
+            "Gods Universe ",
             '',
           ],
           typeSpeed: 50,

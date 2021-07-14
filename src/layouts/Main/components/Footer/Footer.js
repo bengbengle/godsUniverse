@@ -129,7 +129,7 @@ const Footer = props => {
                       alt="thefront"
                       lazy={false}
                     />
-                    God's Universe
+                    Gods Universe
                   </a>
                 </div>
               </ListItem>

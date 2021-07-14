@@ -203,7 +203,7 @@ const Topbar = ({
           />
         </a>
         <div className={classes.logoTitle}>
-          God's Universe
+          Gods Universe
         </div>
       </div>
       <div className={classes.flexGrow} />
