@@ -20,6 +20,11 @@ const Main = ({ children, themeToggler, themeMode, account, setAccount, balance,
   });
  
   const navigations = {
+
+    home: {
+      title: 'Home',
+      id: 'home',
+    },
     whitepaper: {
       title: 'WhitePaper',
       id: 'whitePaper',

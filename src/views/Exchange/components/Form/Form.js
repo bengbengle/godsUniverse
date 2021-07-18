@@ -202,7 +202,7 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
               onChange={handleChange}
               value={formState.values.email || ''}
             />
-            （BNB）
+            BNB
           </Grid>
           <Grid item xs={12}>
             <i>
@@ -213,9 +213,8 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
           </Grid>
           <Grid item xs={6}>
             {
-              willGetGodtNum || '0'
+              (willGetGodtNum || '0') + ' GODT'
             }
-            {' ' + 'GODT'}
           </Grid>
           <Grid item xs={12}>
             <Button

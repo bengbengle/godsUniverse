@@ -508,23 +508,24 @@ const Topbar = ({
   // 
   }
 
-  callConnect()
+  // callConnect()
   
   const whitepaper = pages.whitepaper
   const nft = pages.nft
   const exchange = pages.exchange
+  const home = pages.home
 
   return (
     <Toolbar disableGutters className={classes.toolbar} {...rest}>
       <div className={classes.logoContainer}>
-        <a href="/" title="thefront" className={classes.titlelink}>
+        <span title=".." className={classes.titlelink}>
           <Image
             className={classes.logoImage}
             src={themeMode === 'light' ? '/assets/logo.png' : '/assets/logo.png'}
             alt="thefront"
             lazy={false}
           />
-        </a>
+        </span>
         <div className={classes.logoTitle}>
           Gods Universe
         </div>
@@ -535,7 +536,7 @@ const Topbar = ({
       <Hidden smDown>
         <List disablePadding className={classes.navigationContainer}>
 
-          {[whitepaper, exchange, nft].map((page) => (
+          {[home, whitepaper, exchange, nft].map((page) => (
             <div key={page.id}>
               <ListItem
                 aria-describedby={page.id}

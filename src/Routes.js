@@ -30,6 +30,17 @@ const Routes = () => {
       />
       <Route
         exact
+        path="/home"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={IndexView}
+            layout={MainLayout}
+          />
+        )}
+      />
+      <Route
+        exact
         path="/exchange"
         render={matchProps => (
           <WithLayout
