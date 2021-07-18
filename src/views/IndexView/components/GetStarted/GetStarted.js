@@ -12,8 +12,8 @@ const useStyles = makeStyles(() => ({
 
 const GetStarted = ({ className, ...rest }) => {
   const classes = useStyles();
-  const title = "Go to Exechange";
-  const subtitle = 'Build a beautiful, modern website with flexible, fully customizable, atomic Material UI components.';
+  const title = "Exchange";
+  const subtitle = ' ';
   const button = (
     <Button
       size="large"

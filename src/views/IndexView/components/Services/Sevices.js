@@ -13,28 +13,28 @@ const useStyles = makeStyles(() => ({
     paddingBottom: 0,
   },
   noPaddingTop: {
-    paddingTop: 0,
+    paddingTop: 140,
   },
 }));
 
 const data = [
   {
     icon: 'fas fa-layer-group',
-    title: 'Built for developers',
+    title: 'GODT (Gods Universe Token)',
     subtitle:
-      'TheFront is built to make your life easier. Variables, build tooling, documentation, and reusable components.',
+      'GODT is the basic token of Gods Universe Community. Community governance is gradually realized through GODT.',
   },
   {
     icon: 'fab fa-sketch',
-    title: 'Designed to be modern',
+    title: 'Gods Universe NFT',
     subtitle:
-      'Designed with the latest design trends in mind. TheFront feels modern, minimal, and beautiful.',
+      'Create vip identity card for the God universe community and open a variety of high-level and interesting playing methods.',
   },
   {
-    icon: 'fas fa-code',
-    title: 'Documentation for everything',
+    icon: 'fas fa-dice',
+    title: 'Gods Universe Game',
     subtitle:
-      "We've written extensive documentation for components and tools, so you never have to reverse engineer anything.",
+      "Create a GaaS type of God universe game. Start to enter the new world of Gods Universe.",
   },
 ];
 const Services = ({ className, ...rest }) => {
@@ -46,12 +46,16 @@ const Services = ({ className, ...rest }) => {
    
   const title = (
     <Typography variant="h2" component="span" className={classes.fontWeight900}>
-      Build accessible React apps&nbsp;
-      <Typography component="span" variant="inherit" color="primary">with speed</Typography>
+      {/* Build accessible React apps&nbsp; */}
+      Join the community of  &nbsp;
+      <Typography component="span" variant="inherit" color="primary">Gods Universe</Typography> 
+      {/* 加入神宇宙社区 */}
+      {/* <Typography component="span" variant="inherit" color="primary">with speed</Typography> */}
     </Typography>
   );
 
-  const subtitle = 'Build a beautiful, modern website with flexible, fully customizable, atomic Material UI components.';
+  const subtitle = 'Be a member of Gods Universe Community, participate in community governance and get the according reward.';
+  // 成为神宇宙社区的一员，参与社区治理，并获得相应的回报。
 
   return (
     <div className={className} {...rest}>

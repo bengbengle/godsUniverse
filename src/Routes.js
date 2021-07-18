@@ -7,10 +7,14 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import WithLayout from 'WithLayout';
 import { Main as MainLayout } from './layouts';
+import {
+  Button,
+} from '@material-ui/core';
 
 import {
   IndexView,
-  Exchange
+  Exchange,
+  NFT
 } from './views';
 
 const Routes = () => {
@@ -36,6 +40,27 @@ const Routes = () => {
             component={Exchange}
             layout={MainLayout}
           />
+        )}
+      />
+       <Route
+        exact
+        path="/nft"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={NFT}
+            layout={MainLayout}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/whitepaper"
+        render={matchProps => (
+          <iframe src="/assets/files/GodsUniverseWhitepaper_en.pdf"
+            width="100%" height='9500px' style={{
+              border: 'none'
+            }}></iframe>
         )}
       />
       <Redirect to="/not-found-cover" />

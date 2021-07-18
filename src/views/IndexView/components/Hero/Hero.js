@@ -41,7 +41,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   imageAnimation: {
-    background: `url("https://assets.maccarianagency.com/the-front/web-screens/home/home-hero-bg-light.png")`,
+    background: `url("/assets/home-bg.jpg")`,
     backgroundRepeat: 'repeat',
     backgroundAttachment: 'scroll',
     backgroundSize: '400px auto',
@@ -98,8 +98,11 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
     </Typography>
   );
 
-  const subtitle = 'TheFront will make your product look modern and professional while saving you precious time.';
+  const subtitle = 'Generate a new world of Meta Universe and realize more possibilities in the future.';
 
+  // 创造一个元宇宙的新世界，在未来实现更多可能。
+
+  
 
 
   const leftSideContent = (
