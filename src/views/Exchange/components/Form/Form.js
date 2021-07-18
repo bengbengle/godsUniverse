@@ -150,7 +150,7 @@ const Form = ({balance, account,  ...rest}) => {
           Exchange Rate / 兑换比例
           </Grid>
           <Grid item xs={6}>
-            1 BNB = 250,000,000,000 GODT
+            1 BNB = 200,000,000,000 GODT
           </Grid>
           <Grid item xs={6}>
           Remaining Tokens /兑换池剩余 GODT
