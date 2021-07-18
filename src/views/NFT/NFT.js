@@ -44,7 +44,7 @@ const NFT = ({ themeMode }) => {
                 </Typography>
             </div>
             <div className={classes.bgbox}>
-                <img src='/assets/nft.png' ></img>
+                <img alt='' src='/assets/nft.png' ></img>
             </div>
             <div className={classes.fontSubTitle}>
                 <Typography variant="h2" component="span" style={{

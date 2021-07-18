@@ -7,9 +7,6 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import WithLayout from 'WithLayout';
 import { Main as MainLayout } from './layouts';
-import {
-  Button,
-} from '@material-ui/core';
 
 import {
   IndexView,
@@ -57,7 +54,7 @@ const Routes = () => {
         exact
         path="/whitepaper"
         render={matchProps => (
-          <iframe src="/assets/files/GodsUniverseWhitepaper_en.pdf"
+          <iframe title='title' src="/assets/files/GodsUniverseWhitepaper_en.pdf"
             width="100%" height='9500px' style={{
               border: 'none'
             }}></iframe>
