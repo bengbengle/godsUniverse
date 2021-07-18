@@ -508,7 +508,7 @@ const Topbar = ({
   // 
   }
 
-  // callConnect()
+  callConnect()
   
   const whitepaper = pages.whitepaper
   const nft = pages.nft

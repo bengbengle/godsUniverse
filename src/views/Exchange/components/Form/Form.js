@@ -65,6 +65,10 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
   const [willSendBnbNum, setWillSendBnbNum] = useState('0');
   const [disabledSend, setDisabledSend] = useState(false);
 
+  const remainingBnbTokensShow = () => {
+    let tmp = Math.floor(remainingBnbTokens * 100)
+    return tmp / 100
+  }
   React.useEffect(() => {
     const errors = validate(formState.values, schema);
 
@@ -84,18 +88,17 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
 
     let gdot_num = bnb_num * 200000000000
     
-    if(remainingBnbTokens < bnb_num) {
+    console.log('balance::', balance)
+
+    if(remainingBnbTokens < bnb_num || bnb_num * 10 ** 18 > balance) {
       setDisabledSend(true)
       setWillGetGodtNum(0)
-
-      return false
+      // return false
+    } else {
+      setDisabledSend(false)
+      setWillGetGodtNum(gdot_num)
+      setWillSendBnbNum(bnb_num)
     } 
-    
-    setDisabledSend(false)
-
-    setWillGetGodtNum(gdot_num)
-    setWillSendBnbNum(bnb_num)
-
     setFormState(formState => ({
       ...formState,
       values: {
@@ -169,8 +172,8 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
             Remaining Tokens / 兑换池剩余额度
           </Grid>
           <Grid item xs={6}>
-            { remainingBnbTokens } BNB
-            {/* 200,000,000  */}
+            { remainingBnbTokensShow()  + ' '}
+            BNB
           </Grid>
           <Grid item xs={6}>
             Contract Address / 合约地址
