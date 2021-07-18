@@ -134,7 +134,12 @@ const showAccount = (account) => {
   return s + '...' + e
 }
 
-const contract_address =  '0xC541Aeaf07DC320ce3d3528712C7f1512827c891'
+// bsc mainnet 
+const contract_address =  '0x5328475b5C05165B7e95983B54c56378b1d03045'
+
+// kova testnet 
+// const contract_address =  '0xC541Aeaf07DC320ce3d3528712C7f1512827c891'
+
 
 const Topbar = ({ 
   themeMode, 

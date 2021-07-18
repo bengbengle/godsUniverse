@@ -42,13 +42,13 @@ const balanceShow = (balance) => {
   return b.toFixed(4)
 }
 
-// const contract_address = '0x5328475b5C05165B7e95983B54c56378b1d03045'
-// const short_address = '0x5328...3045'
-// const baseurl = 'https://bscscan.com/address/'
+const contract_address = '0x5328475b5C05165B7e95983B54c56378b1d03045'
+const short_address = '0x5328...3045'
+const baseurl = 'https://bscscan.com/address/'
 
-const contract_address =  '0xC541Aeaf07DC320ce3d3528712C7f1512827c891'
-const short_address =  '0xC541...c891'
-const baseurl = 'https://kovan.etherscan.io/address/'
+// const contract_address =  '0xC541Aeaf07DC320ce3d3528712C7f1512827c891'
+// const short_address =  '0xC541...c891'
+// const baseurl = 'https://kovan.etherscan.io/address/'
 
 
 const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
