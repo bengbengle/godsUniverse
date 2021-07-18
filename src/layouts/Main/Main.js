@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Main = ({ children, themeToggler, themeMode, account, setAccount, balance, setBalance }) => {
+const Main = ({ children, themeToggler, themeMode, account, setAccount, balance, setBalance, remainingBnbTokens, setRemainingBnbTokens }) => {
   const classes = useStyles();
 
   const theme = useTheme();
@@ -61,7 +61,8 @@ const Main = ({ children, themeToggler, themeMode, account, setAccount, balance,
       setAccount={setAccount} 
       balance={balance} 
       setBalance={setBalance} 
-      
+      remainingBnbTokens={remainingBnbTokens}
+      setRemainingBnbTokens={setRemainingBnbTokens}
       />
       <Sidebar
         onClose={handleSidebarClose}

@@ -134,6 +134,8 @@ const showAccount = (account) => {
   return s + '...' + e
 }
 
+const contract_address =  '0xC541Aeaf07DC320ce3d3528712C7f1512827c891'
+
 const Topbar = ({ 
   themeMode, 
   themeToggler, 
@@ -144,6 +146,8 @@ const Topbar = ({
   setAccount,
   balance,
   setBalance,
+  remainingBnbTokens,
+  setRemainingBnbTokens,
   ...rest }) => {
   const classes = useStyles();
 
@@ -156,6 +160,315 @@ const Topbar = ({
 
   };
 
+  const getremainingBnbTokensNumber = async () => {
+    var abi = [
+        {
+          "inputs": [
+            {
+              "internalType": "contract IERC20",
+              "name": "_godt",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "wad",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "godtAmount",
+              "type": "uint256"
+            }
+          ],
+          "name": "SwapForGODT",
+          "type": "event"
+        },
+        {
+          "stateMutability": "payable",
+          "type": "fallback"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address payable",
+              "name": "_receiver",
+              "type": "address"
+            }
+          ],
+          "name": "changeReceiver",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "claimOwnership",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getPurchaseLimit",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "godt",
+          "outputs": [
+            {
+              "internalType": "contract IERC20",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "gotAsset",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "maxNeedAsset",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "offeredGODT",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "owner",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "pendingOwner",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "purchaseLimit",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "receiver",
+          "outputs": [
+            {
+              "internalType": "address payable",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_totalOfferGODT",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_maxNeedAsset",
+              "type": "uint256"
+            }
+          ],
+          "name": "setSwapRate",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "superTransfer",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "swapForGODT",
+          "outputs": [],
+          "stateMutability": "payable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "totalOfferGODT",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "wad",
+              "type": "uint256"
+            }
+          ],
+          "name": "transferAsset",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "transferOwnership",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "stateMutability": "payable",
+          "type": "receive"
+        }
+      ]
+
+
+      var contract = new window.web3.eth.Contract(abi, contract_address)
+      
+
+      let remainingBnbTokens = await contract.methods.getPurchaseLimit().call()
+      
+      let num = remainingBnbTokens/ 10 ** 18 
+      console.log('num::', num) 
+
+      setRemainingBnbTokens(num)
+
+      // debugger
+     contract.events.SwapForGODT(function (error, result) {
+      if (error) {
+        return
+      }
+      console.log("9999");
+      console.log(result);
+      
+      // document.getElementById("info").innerHTML = ZombieFactory.get();
+    });
+  }
+ 
 
   const callConnect = async () => {
     console.log('call connect ....')
@@ -185,8 +498,13 @@ const Topbar = ({
 
     console.log('balance ..:', balance)
     setBalance(balance)
+
+    await getremainingBnbTokensNumber()
+  // 
   }
 
+  callConnect()
+  
   const whitepaper = pages.whitepaper
   const nft = pages.nft
   const exchange = pages.exchange

@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const SignupCover = ({balance, account, ...rest}) => {
+const SignupCover = ({balance, account, remainingBnbTokens, ...rest}) => {
   const classes = useStyles();
 
   console.log('balance', balance)
@@ -49,7 +49,7 @@ const SignupCover = ({balance, account, ...rest}) => {
                 variant: 'h3',
               }}
             />
-            <Form balance={balance} account={account} />
+            <Form balance={balance} account={account} remainingBnbTokens={remainingBnbTokens} />
           </div>
         }
         rightSide={

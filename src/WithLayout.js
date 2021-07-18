@@ -50,14 +50,16 @@ export const useDarkMode = () => {
 export const useWallet = () => {
   const [account, setAccount] = useState('');
   const [balance, setBalance] = useState('');
+  const [remainingBnbTokens, setRemainingBnbTokens] = useState('0');
+
   
   useEffect(() => {
     console.log(account)
     console.log(balance)
     AOS.refresh();
-  }, [account, balance]);
+  }, [account, balance, remainingBnbTokens]);
 
-  return [account, setAccount, balance, setBalance];
+  return [account, setAccount, balance, setBalance, remainingBnbTokens, setRemainingBnbTokens];
 };
 
 
@@ -80,11 +82,11 @@ export default function WithLayout({ component: Component, layout: Layout, ...re
 
   const [themeMode, themeToggler, mountedComponent] = useDarkMode();
   
-  const [account, setAccount, balance, setBalance] = useWallet();
+  const [account, setAccount, balance, setBalance, remainingBnbTokens, setRemainingBnbTokens] = useWallet();
 
   useEffect(() => {
     AOS.refresh();
-  }, [mountedComponent, account, balance]);
+  }, [mountedComponent, account, balance, remainingBnbTokens]);
 
   return (
     <ThemeProvider theme={getTheme(themeMode)}>
@@ -98,13 +100,20 @@ export default function WithLayout({ component: Component, layout: Layout, ...re
 
         balance={balance}
         setBalance={setBalance}
+        
+        remainingBnbTokens={remainingBnbTokens}
+        setRemainingBnbTokens={setRemainingBnbTokens}
+
         >
           <Component themeMode={themeMode} 
             account = {account}
             setAccount = {setAccount}
             balance = {balance}
             setBalance = {setBalance}
-          {...rest} />
+            remainingBnbTokens={remainingBnbTokens}
+            setRemainingBnbTokens={setRemainingBnbTokens}
+
+        {...rest} />
         </Layout>
       </Paper>
     </ThemeProvider>

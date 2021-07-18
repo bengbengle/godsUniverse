@@ -38,20 +38,20 @@ const schema = {
 };
 
 const balanceShow = (balance) => {
-  let b = balance / 10 ** 18 
+  let b = balance / 10 ** 18
   return b.toFixed(4)
 }
 
-const contract_address =  '0x5328475b5C05165B7e95983B54c56378b1d03045'
-const short_address =  '0x5328...3045'
-const baseurl = 'https://bscscan.com/address/'
+// const contract_address = '0x5328475b5C05165B7e95983B54c56378b1d03045'
+// const short_address = '0x5328...3045'
+// const baseurl = 'https://bscscan.com/address/'
 
-// const contract_address =  '0xC541Aeaf07DC320ce3d3528712C7f1512827c891'
-// const short_address =  '0xC541...c891'
-// const baseurl = 'https://kovan.etherscan.io/address/'
+const contract_address =  '0xC541Aeaf07DC320ce3d3528712C7f1512827c891'
+const short_address =  '0xC541...c891'
+const baseurl = 'https://kovan.etherscan.io/address/'
 
 
-const Form = ({balance, account,  ...rest}) => {
+const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
   const classes = useStyles();
 
   const [formState, setFormState] = React.useState({
@@ -63,6 +63,7 @@ const Form = ({balance, account,  ...rest}) => {
 
   const [willGetGodtNum, setWillGetGodtNum] = useState('0');
   const [willSendBnbNum, setWillSendBnbNum] = useState('0');
+  const [disabledSend, setDisabledSend] = useState(false);
 
   React.useEffect(() => {
     const errors = validate(formState.values, schema);
@@ -78,10 +79,19 @@ const Form = ({balance, account,  ...rest}) => {
     event.persist();
 
     console.log(event.target.value)
-    
+
     let bnb_num = event.target.value
 
-    let gdot_num = bnb_num * 250000000000
+    let gdot_num = bnb_num * 200000000000
+    
+    if(remainingBnbTokens < bnb_num) {
+      setDisabledSend(true)
+      setWillGetGodtNum(0)
+
+      return false
+    } 
+    
+    setDisabledSend(false)
 
     setWillGetGodtNum(gdot_num)
     setWillSendBnbNum(bnb_num)
@@ -105,6 +115,8 @@ const Form = ({balance, account,  ...rest}) => {
   const handleSubmit = event => {
     event.preventDefault();
 
+    if(disabledSend) return false
+
     if (formState.isValid) {
       window.location.replace('/');
     }
@@ -113,17 +125,18 @@ const Form = ({balance, account,  ...rest}) => {
 
     console.log(willGetGodtNum, num)
 
-      window.web3.eth.sendTransaction({
-        from: account,
-        to: contract_address,
-      value: num}, (err,res) => {
+    window.web3.eth.sendTransaction({
+      from: account,
+      to: contract_address,
+      value: num
+    }, (err, res) => {
       if (err) {
         console.log('Error: ', err);
       } else {
         console.log('Tx ID: ', res);
       }
     });
-    
+
     setFormState(formState => ({
       ...formState,
       touched: {
@@ -132,50 +145,53 @@ const Form = ({balance, account,  ...rest}) => {
       },
     }));
   };
-
+  
   return (
     <div className={classes.root}>
       <form name="password-reset-form" method="post" onSubmit={handleSubmit}>
         <Grid container spacing={2}>
           <Grid item xs={6}>
-          Account Balance / 账户余额
+            Account Balance / 账户余额
           </Grid>
           <Grid item xs={6}>
             {
               balanceShow(balance) + ' '
             }
-             BNB
+            BNB
           </Grid>
           <Grid item xs={6}>
-          Exchange Rate / 兑换比例
+            Exchange Rate / 兑换比例
           </Grid>
           <Grid item xs={6}>
             1 BNB = 200,000,000,000 GODT
           </Grid>
           <Grid item xs={6}>
-          Remaining Tokens /兑换池剩余 GODT
+            Remaining Tokens / 兑换池剩余额度
           </Grid>
           <Grid item xs={6}>
-            200,000,000
+            { remainingBnbTokens } BNB
+            {/* 200,000,000  */}
           </Grid>
           <Grid item xs={6}>
-            合约地址
+            Contract Address / 合约地址
           </Grid>
           <Grid item xs={6}>
-            <a rel="noreferrer" target="_blank" 
-            href={baseurl + contract_address } >
-            {/* 0xC541...c891↗ */}
-            { short_address }↗
+            <a rel="noreferrer" target="_blank"
+              href={baseurl + contract_address} >
+              {short_address}↗
             </a>
           </Grid>
           <Grid item xs={12}>
             <i>
               <Typography variant="subtitle2">
-                输入要兑换的金额（BNB）
+                Please input the exchange tokens number / 输入要兑换的金额
               </Typography>
             </i>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={6} style={{
+            display: 'flex',
+            alignItems: 'center'
+          }}>
             <TextField
               placeholder="兑换BNB数量"
               label="兑换数量 *"
@@ -186,6 +202,7 @@ const Form = ({balance, account,  ...rest}) => {
               onChange={handleChange}
               value={formState.values.email || ''}
             />
+            （BNB）
           </Grid>
           <Grid item xs={12}>
             <i>
@@ -198,9 +215,11 @@ const Form = ({balance, account,  ...rest}) => {
             {
               willGetGodtNum || '0'
             }
+            {' ' + 'GODT'}
           </Grid>
           <Grid item xs={12}>
             <Button
+            disabled={disabledSend}
               size="large"
               variant="contained"
               type="submit"
