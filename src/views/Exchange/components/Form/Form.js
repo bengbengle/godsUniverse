@@ -44,7 +44,7 @@ const balanceShow = (balance) => {
 
 const contract_address =  '0x5328475b5C05165B7e95983B54c56378b1d03045'
 const short_address =  '0x5328...3045'
-const baseurl = 'https://etherscan.io/address/'
+const baseurl = 'https://bscscan.com/address/'
 
 // const contract_address =  '0xC541Aeaf07DC320ce3d3528712C7f1512827c891'
 // const short_address =  '0xC541...c891'
@@ -163,7 +163,7 @@ const Form = ({balance, account,  ...rest}) => {
           </Grid>
           <Grid item xs={6}>
             <a rel="noreferrer" target="_blank" 
-            href={baseurl + short_address } >
+            href={baseurl + contract_address } >
             {/* 0xC541...c891↗ */}
             { short_address }↗
             </a>
