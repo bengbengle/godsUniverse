@@ -42,8 +42,8 @@ const balanceShow = (balance) => {
   return b.toFixed(4)
 }
 
-const contract_address = '0x5328475b5C05165B7e95983B54c56378b1d03045'
-const short_address = '0x5328...3045'
+const contract_address = '0x6Dd6E592D2945a01F16183D0878bb0e092A6ae67'
+const short_address = '0x6Dd6...ae67'
 const baseurl = 'https://bscscan.com/address/'
 
 // const contract_address =  '0xC541Aeaf07DC320ce3d3528712C7f1512827c891'

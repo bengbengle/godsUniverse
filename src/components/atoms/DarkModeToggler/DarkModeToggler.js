@@ -59,13 +59,13 @@ const DarkModeToggler = ({ themeMode = 'light', onClick, className, ...rest }) =
 
   return (
     <span className={clsx(classes.root, className)} {...rest} onClick={onClick}>
-      <div
+      {/* <div
         className={clsx(
           classes.border,
           themeMode === 'dark' ? classes.borderDark : '',
         )}
-      />
-      <div
+      /> */}
+      {/* <div
         className={clsx(
           classes.modeToggler,
           themeMode === 'dark' ? classes.modeTogglerDark : '',
@@ -75,7 +75,7 @@ const DarkModeToggler = ({ themeMode = 'light', onClick, className, ...rest }) =
               themeMode === 'dark' ? 'English' : '中文'
             }
           </div>
-      </div>
+      </div> */}
     </span>
   );
 };

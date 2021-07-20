@@ -54,7 +54,7 @@ const SignupCover = ({balance, account, remainingBnbTokens, ...rest}) => {
         }
         rightSide={
           <Image
-            src="https://assets.maccarianagency.com/the-front/photos/account/cover-2.png"
+            src="/assets/exchange.jpg"
             className={classes.image}
             lazy={false}
           />
