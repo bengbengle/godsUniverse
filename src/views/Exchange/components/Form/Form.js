@@ -154,7 +154,8 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
       <form name="password-reset-form" method="post" onSubmit={handleSubmit}>
         <Grid container spacing={2}>
           <Grid item xs={6}>
-            Account Balance / 账户余额
+            Account Balance
+             {/* / 账户余额 */}
           </Grid>
           <Grid item xs={6}>
             {
@@ -163,20 +164,23 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
             BNB
           </Grid>
           <Grid item xs={6}>
-            Exchange Rate / 兑换比例
+            Exchange Rate 
+            {/* / 兑换比例 */}
           </Grid>
           <Grid item xs={6}>
             1 BNB = 200,000,000,000 GODT
           </Grid>
           <Grid item xs={6}>
-            Remaining Tokens / 兑换池剩余额度
+            Remaining Tokens
+             {/* / 兑换池剩余额度 */}
           </Grid>
           <Grid item xs={6}>
             { remainingBnbTokensShow()  + ' '}
             BNB
           </Grid>
           <Grid item xs={6}>
-            Contract Address / 合约地址
+            Contract Address 
+            {/* / 合约地址 */}
           </Grid>
           <Grid item xs={6}>
             <a rel="noreferrer" target="_blank"
@@ -187,7 +191,8 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
           <Grid item xs={12}>
             <i>
               <Typography variant="subtitle2">
-                Please input the exchange tokens number / 输入要兑换的金额
+                Please input the exchange tokens number 
+                {/* / 输入要兑换的金额 */}
               </Typography>
             </i>
           </Grid>
@@ -196,8 +201,8 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
             alignItems: 'center'
           }}>
             <TextField
-              placeholder="兑换BNB数量"
-              label="兑换数量 *"
+              placeholder="Swap BNB Amount"
+              label="Swap Amount *"
               variant="outlined"
               size="medium"
               name="email"
@@ -210,7 +215,8 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
           <Grid item xs={12}>
             <i>
               <Typography variant="subtitle2">
-                您将会得到的 GODT 的数量
+                {/* 您将会得到的 GODT 的数量 */}
+                The GODT Number that You will get
               </Typography>
             </i>
           </Grid>
@@ -228,7 +234,8 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
               color="primary"
               fullWidth
             >
-              Send / 兑换
+              Send
+               {/* / 兑换 */}
             </Button>
           </Grid>
           <Grid item xs={12}>

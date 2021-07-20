@@ -156,7 +156,7 @@ const SidebarNav = props => {
           <CloseIcon fontSize="small" />
         </ListItemIcon>
       </ListItem>
-      <ListItem className={classes.listItem}>
+      {/* <ListItem className={classes.listItem}>
         <Typography variant="h6" color="textPrimary" gutterBottom>
           Landings
         </Typography>
@@ -180,14 +180,46 @@ const SidebarNav = props => {
         </Typography>
         <AccountPages />
       </ListItem>
-      <ListItem className={classes.listItem}>
+      */}
+      <ListItem className={classes.listItem}> 
         <Button
-          variant="outlined"
+          // variant="outlined"
           fullWidth
           component="a"
-          href="/documentation"
+          href="/home"
         >
-          Documentation
+          Home
+        </Button>
+        
+      </ListItem>
+      <ListItem className={classes.listItem}> 
+        <Button
+          fullWidth
+          component="a"
+          href="/whitepaper"
+        >
+          WhitePaper
+        </Button>
+        
+      </ListItem>
+      <ListItem className={classes.listItem}> 
+        <Button
+          // variant="outlined"
+          fullWidth
+          component="a"
+          href="/exchange"
+        >
+          Exchange
+        </Button>
+        
+      </ListItem>
+      <ListItem className={classes.listItem}> 
+        <Button
+          fullWidth
+          component="a"
+          href="/nft"
+        >
+          NFT
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
@@ -197,9 +229,9 @@ const SidebarNav = props => {
           fullWidth
           component="a"
           target="blank"
-          href="https://material-ui.com/store/items/the-front-landing-page/"
+          href="/exchange"
         >
-          Buy Now
+          Start Now
         </Button>
       </ListItem>
     </List>

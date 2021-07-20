@@ -9,9 +9,10 @@ import {
   ListItem,
   Typography,
   Button,
+  IconButton
 } from '@material-ui/core';
 import { Image, DarkModeToggler } from 'components/atoms';
-
+import MenuIcon from '@material-ui/icons/Menu';
 
 import Web3 from 'web3';
 
@@ -84,7 +85,7 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.primary.dark,
   },
   logoContainer: {
-    width: 40,
+    width: 180,
     height: 40,
     display: 'flex',
     justifyContent: 'center',
@@ -98,7 +99,7 @@ const useStyles = makeStyles(theme => ({
     width: '40px'
   },
   logoImage: {
-    with: '40px!important',
+    width: '40px!important',
     height: '40px',
   },
   logoTitle: {
@@ -499,13 +500,17 @@ const Topbar = ({
     }
     window.web3 = new Web3(web3Provider);
     window.web3Provider = web3Provider
-    let balance = await window.web3.eth.getBalance(myAccount[0])
 
-    console.log('balance ..:', balance)
-    setBalance(balance)
+    // if(myAccount) {
+      let balance = await window.web3.eth.getBalance(myAccount[0])
 
-    await getremainingBnbTokensNumber()
-  // 
+      console.log('balance ..:', balance)
+      setBalance(balance)
+
+      await getremainingBnbTokensNumber()
+    
+    // }
+    // 
   }
 
   callConnect()
@@ -575,6 +580,16 @@ const Topbar = ({
         </List>
       </Hidden>
 
+      <Hidden mdUp>
+        {/* <DarkModeToggler themeMode={themeMode} onClick={() => themeToggler()} /> */}
+        <IconButton
+          className={classes.iconButton}
+          onClick={onSidebarOpen}
+          aria-label="Menu"
+        >
+          <MenuIcon />
+        </IconButton>
+      </Hidden>
     </Toolbar>
   );
 };
