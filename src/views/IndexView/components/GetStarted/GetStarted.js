@@ -20,7 +20,7 @@ const GetStarted = ({ className, ...rest }) => {
       variant="contained"
       color="primary"
       component="a"
-      href="/home"
+      href="/exchange"
     >
       Get started
     </Button>
