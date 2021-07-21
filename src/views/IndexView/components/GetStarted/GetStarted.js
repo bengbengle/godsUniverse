@@ -13,7 +13,6 @@ const useStyles = makeStyles(() => ({
 const GetStarted = ({ className, ...rest }) => {
   const classes = useStyles();
   const title = "Exchange";
-  const subtitle = ' ';
   const button = (
     <Button
       size="large"
@@ -29,12 +28,15 @@ const GetStarted = ({ className, ...rest }) => {
     <div className={className} {...rest}>
       <SectionHeader
         title={title}
-        subtitle={subtitle}
         align="center"
+        subtitle= "Maximum circulation of GODT is 1 quadrillion(10**15). After you got GODT, 8% of the principal is deducted as a transaction fee when you transfer GODT from your account."
         titleProps={{
           variant: 'h2',
           color: 'textPrimary',
           className: classes.fontWeight900,
+        }}
+        subtitleProps= {{
+          fontSize: 'medium'
         }}
         ctaGroup={[button]}
       />
