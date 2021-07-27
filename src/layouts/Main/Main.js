@@ -30,7 +30,7 @@ const Main = ({ children, themeToggler, themeMode, account, setAccount, balance,
       id: 'whitePaper',
     },
     exchange: {
-      title: 'Exchange',
+      title: 'IDO',
       id: 'exchange',
     },
     nft: {

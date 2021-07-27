@@ -42,8 +42,9 @@ const balanceShow = (balance) => {
   return b.toFixed(4)
 }
 
-const contract_address = '0x6Dd6E592D2945a01F16183D0878bb0e092A6ae67'
-const short_address = '0x6Dd6...ae67'
+// const contract_address = '0x6Dd6E592D2945a01F16183D0878bb0e092A6ae67'
+const contract_address = '0x0f0D26e84102e85Ef71fdF9519782611B6c26503'
+const short_address = '0x0f0D...6503'
 const baseurl = 'https://bscscan.com/address/'
 
 // const contract_address =  '0xC541Aeaf07DC320ce3d3528712C7f1512827c891'
@@ -87,10 +88,10 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
     let bnb_num = event.target.value
 
     let gdot_num = bnb_num * 200000000000
-    
+
     console.log('balance::', balance)
 
-    if(remainingBnbTokens < bnb_num || bnb_num * 10 ** 18 > balance) {
+    if (remainingBnbTokens < bnb_num || bnb_num * 10 ** 18 > balance) {
       setDisabledSend(true)
       setWillGetGodtNum(0)
       // return false
@@ -98,7 +99,7 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
       setDisabledSend(false)
       setWillGetGodtNum(gdot_num)
       setWillSendBnbNum(bnb_num)
-    } 
+    }
     setFormState(formState => ({
       ...formState,
       values: {
@@ -118,7 +119,7 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    if(disabledSend) return false
+    if (disabledSend) return false
 
     if (formState.isValid) {
       window.location.replace('/');
@@ -148,38 +149,55 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
       },
     }));
   };
-  
+
   return (
     <div className={classes.root}>
       <form name="password-reset-form" method="post" onSubmit={handleSubmit}>
         <Grid container spacing={2}>
           <Grid item xs={6}>
             Account Balance
-             {/* / 账户余额 */}
+            {/* / 账户余额 */}
           </Grid>
           <Grid item xs={6}>
             {
               balanceShow(balance) + ' '
             }
-            BNB
+            USDT
           </Grid>
           <Grid item xs={6}>
-            Exchange Rate 
+            Exchange Rate
             {/* / 兑换比例 */}
           </Grid>
           <Grid item xs={6}>
-            1 BNB = 200,000,000,000 GODT
+            1 USDT = 200,000,000,000 GODT
+          </Grid>
+          <Grid item xs={6}>
+            IDO maximum
+            {/* / 兑换池剩余额度 */}
+          </Grid>
+          <Grid item xs={6}>
+            200,000 USDT
           </Grid>
           <Grid item xs={6}>
             Remaining Tokens
-             {/* / 兑换池剩余额度 */}
+            {/* / 兑换池剩余额度 */}
           </Grid>
           <Grid item xs={6}>
-            { remainingBnbTokensShow()  + ' '}
-            BNB
+            {remainingBnbTokensShow() + ' '}
+            USDT
           </Grid>
           <Grid item xs={6}>
-            Contract Address 
+            BSC-USDT Address
+            {/* / 合约地址 */}
+          </Grid>
+          <Grid item xs={6}>
+            <a rel="noreferrer" target="_blank"
+              href={baseurl + ' 0x55d398326f99059ff775485246999027b3197955'} >
+              {'0x55d3...7955'}↗
+            </a>
+          </Grid>
+          <Grid item xs={6}>
+            IDO Contract Address
             {/* / 合约地址 */}
           </Grid>
           <Grid item xs={6}>
@@ -191,7 +209,8 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
           <Grid item xs={12}>
             <i>
               <Typography variant="subtitle2">
-                Please input the exchange tokens number 
+                {/* Please input the exchange tokens number  */}
+                Please input the USDT number
                 {/* / 输入要兑换的金额 */}
               </Typography>
             </i>
@@ -201,7 +220,7 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
             alignItems: 'center'
           }}>
             <TextField
-              placeholder="Swap BNB Amount"
+              placeholder="Swap USDT Amount"
               label="Swap Amount *"
               variant="outlined"
               size="medium"
@@ -210,7 +229,7 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
               onChange={handleChange}
               value={formState.values.email || ''}
             />
-            BNB
+            USDT
           </Grid>
           <Grid item xs={12}>
             <i>
@@ -227,7 +246,7 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
           </Grid>
           <Grid item xs={12}>
             <Button
-            disabled={disabledSend}
+              disabled={disabledSend}
               size="large"
               variant="contained"
               type="submit"
@@ -235,7 +254,7 @@ const Form = ({ balance, account, remainingBnbTokens, ...rest }) => {
               fullWidth
             >
               Send
-               {/* / 兑换 */}
+              {/* / 兑换 */}
             </Button>
           </Grid>
           <Grid item xs={12}>

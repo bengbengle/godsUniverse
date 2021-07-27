@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
 
 const GetStarted = ({ className, ...rest }) => {
   const classes = useStyles();
-  const title = "Exchange";
+  const title = "IDO";
   const button = (
     <Button
       size="large"

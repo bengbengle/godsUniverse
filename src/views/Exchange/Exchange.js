@@ -43,8 +43,8 @@ const SignupCover = ({balance, account, remainingBnbTokens, ...rest}) => {
         leftSide={
           <div className={classes.formContainer}>
             <SectionHeader
-              title="Exchange"
-              subtitle="Swap BNB Coin get the GODT Tokens"
+              title="IDO"
+              subtitle="Initial Digital assets Offering in BSC"
               titleProps={{
                 variant: 'h3',
               }}
